@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <textarea name="" id="message" cols="30" rows="10" widht="100">Hello!</textarea>
+    </div>
+    <button id="msgBtn" width="100">Click Here to See Message</button>
+
+    <script>
+        url="https://gist.githubusercontent.com/shreyasminocha/7d5dedafc1fe158f82563c1223855177/raw/325d51aca7165b2498971afcff9bed286a52dc0e/quotes.json"
+        let array=[]
+        fetch(url).then(
+            (value)=>{
+                return value.json()
+            }
+        ).then(
+            (value)=>{
+                array=value
+
+
+
+                const btn=document.getElementById("msgBtn")
+                const msg=document.getElementById("message")
+                btn.onclick=()=>{
+                    msg.innerHTML=JSON.stringify(value)
+                }
+            }
+        )
+
+    </script>
+</body>
+</html>

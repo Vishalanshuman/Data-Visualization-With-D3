@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div name="" id="message" cols="30" rows="10" widht="100">Hello!</div>
+    </div>
+    <button id="msgBtn" width="100">Click Here to See Message</button>
+
+    <script>
+        const rqst =new XMLHttpRequest()
+        rqst.open("GET","https://gist.githubusercontent.com/shreyasminocha/7d5dedafc1fe158f82563c1223855177/raw/325d51aca7165b2498971afcff9bed286a52dc0e/quotes.json")
+        rqst.send()
+        rqst.onload=()=>{
+            const json = JSON.parse(rqst.responseText)
+            const message = document.getElementById("message")
+            const button = document.getElementById("msgBtn")
+            let html="";
+            button.onclick=function(){
+                json.forEach(cat => {
+                    html+="<div class='cat'>"
+                    let keys=Object.keys(cat)
+                    keys.forEach((key)=>{
+                        html+="<strong>"+key+"</strong>"
+                        html+=":"
+                        html+=cat[key]
+                        html+="<br/>"
+                    })
+                    html+="</div>"
+                    html+="<hr/>"
+                    
+                });
+                message.innerHTML=html
+            }
+        }
+
+    </script>
+</body>
+</html>

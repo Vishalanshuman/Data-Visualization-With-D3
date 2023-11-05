@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="message">Hello ji!</div>
+    </div>
+    <button id="getMessage">Button</button>
+    <script>
+
+        document.addEventListener("DOMContentLoaded",()=>{
+            const messgageBtn = document.getElementById("getMessage")
+            messgageBtn.onclick = function(){
+                document.getElementsByClassName("message")[0].textContent="Here is your message!"
+            }
+        
+        })
+    </script>
+</body>
+</html>

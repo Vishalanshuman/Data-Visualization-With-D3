@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+
+svg{
+    background-color: whitesmoke;
+    margin: auto auto;
+}
+#legend{
+    margin: auto auto;
+}
+#tooltip{
+    visibility: hidden;
+    width: auto;
+    height:  auto;
+    margin: auto auto;
+
+
+}

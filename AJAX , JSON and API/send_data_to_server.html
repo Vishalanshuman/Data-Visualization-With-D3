@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <textarea name="" id="message" cols="30" rows="10" widht="100">Hello!</textarea>
+    </div>
+    <button id="msgBtn" width="100">Click Here to See Message</button>
+
+    <script>
+        let url='https://jsonplaceholder.typicode.com/posts'
+        const rqst =new XMLHttpRequest()
+        rqst.open("POST",url,true)
+        rqst.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+        rqst.onreadystatechange = ()=>{
+            if (rqst.status===201 && rqst.readyState===4){
+                let object=JSON.parse(rqst.response)
+                console.log(object)
+            }
+        }
+        let body = JSON.stringify({"name":"Vishal Bhardwaj","message":"Hello World"})
+        rqst.send(body)
+
+    </script>
+</body>
+</html>

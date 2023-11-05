@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let json =  [
+        {
+            "end_year": "",
+            "intensity": 6,
+            "sector": "Energy",
+            "topic": "gas",
+            "insight": "Annual Energy Outlook",
+            "url": "http://www.eia.gov/outlooks/aeo/pdf/0383(2017).pdf",
+            "region": "Northern America",
+            "start_year": "",
+            "impact": "",
+            "added": "January, 20 2017 03:51:25",
+            "published": "January, 09 2017 00:00:00",
+            "country": "United States of America",
+            "relevance": 2,
+            "pestle": "Industries",
+            "source": "EIA",
+            "title": "U.S. natural gas consumption is expected to increase during much of the projection period.",
+            "likelihood": 3
+        },
+        {
+            "end_year": "",
+            "intensity": 6,
+            "sector": "Energy",
+            "topic": "oil",
+            "insight": "Annual Energy Outlook",
+            "url": "http://www.eia.gov/outlooks/aeo/pdf/0383(2017).pdf",
+            "region": "Northern America",
+            "start_year": "",
+            "impact": "",
+            "added": "January, 20 2017 03:51:24",
+            "published": "January, 09 2017 00:00:00",
+            "country": "United States of America",
+            "relevance": 2,
+            "pestle": "Industries",
+            "source": "EIA",
+            "title": "Reference case U.S. crude oil production is projected to recover from recent declines.",
+            "likelihood": 3
+        },
+    ]
+
+    let jsonString = JSON.stringify(json)
+    console.log(jsonString)
+    let jsonData=JSON.parse(jsonString)
+    console.log(jsonData)
+    let jsonInString=JSON.stringify(jsonData)
+    console.log(jsonInString)
+    </script>
+    
+</body>
+</html>
